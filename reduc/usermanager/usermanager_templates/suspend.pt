@@ -1,0 +1,32 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      metal:use-macro="context/main_template/macros/master"
+      lang="en">
+<body>
+
+  <metal:main fill-slot="content-core">
+    <tal:main-macro metal:define-macro="content-core">
+
+      <h2 class="documentFirstHeading" tal:content="view/label">Title</h2>
+
+      <tal:user condition="view/users/get_users"
+                define="user view/users/current;
+                        uid  user/uid|string:???;
+                        cn   user/cn|string:???;
+                        userPassword  user/userPassword|string:???;
+                        accountClassification  user/accClass|string:???;
+                        ">
+        Login: <span tal:replace="uid">login</span><br>
+        Nombre: <span tal:replace="cn">Nombre Apellido</span><br>
+        Password: <span tal:replace="userPassword">pwd</span><br>
+        Tipo: <span tal:replace="accountClassification">prof,ing,elect</span><br>
+      </tal:user>
+      
+      <metal:block use-macro="context/@@ploneform-macros/titlelessform" />
+
+    </tal:main-macro>
+  </metal:main>
+</body>
+</html>
