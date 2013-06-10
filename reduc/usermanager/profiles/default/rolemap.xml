@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Owner" />
+    <role name="Manager" />
+    <role name="Site Administrator" />
+    <role name="UserManagerBasic" />
+    <role name="UserManagerFull" />
+  </roles>
+
+  <permissions>
+    <permission name="UserManager: View" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+      <role name="UserManagerBasic" />
+    </permission>
+    <permission name="UserManager: Password" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+      <role name="UserManagerBasic" />
+    </permission>
+    <permission name="UserManager: Modify" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+      <role name="UserManagerBasic" />
+    </permission>
+    <permission name="UserManager: New" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+    </permission>
+    <permission name="UserManager: Reactivate" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+    </permission>
+    <permission name="UserManager: Suspend" acquire="True">
+      <role name="Manager" />
+      <role name="Site Administrator" />
+      <role name="UserManagerFull" />
+      <role name="UserManagerBasic" />
+    </permission>
+  </permissions>
+</rolemap>

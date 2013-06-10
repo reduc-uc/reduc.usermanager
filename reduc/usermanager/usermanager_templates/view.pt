@@ -1,0 +1,47 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+     xmlns:tal="http://xml.zope.org/namespaces/tal"
+     xmlns:metal="http://xml.zope.org/namespaces/metal"
+     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+     metal:use-macro="context/main_template/macros/master"
+     lang="en">
+
+<body>
+  <metal:content-core fill-slot="content-core">
+    <metal:content-core define-macro="content-core">
+
+      <!-- No Hay usuarios seleccionados -->
+      <tal:no-user condition="not:view/users/get_users">
+        No hay ningun usuario seleccionado.
+      </tal:no-user>
+
+      <!-- Si Hay usuarios seleccionados -->
+      <tal:user condition="view/users/get_users"
+                define="user view/users/current;
+                        uid  user/uid|string:???;
+                        uniqueIdentifier user/uniqueIdentifier|string:???;
+                        cn   user/cn|string:???;
+                        userPassword  user/userPassword|string:???;
+                        accountClassification  user/accClass|string:???;
+                        zimbraAccountStatus   user/zimbraAccountStatus|string:???;
+                        zimbraMailStatus  user/zimbraAccountStatus|string:???;
+                        displayName  user/displayName|string:'';
+                        zimbraPrefFromAddress user/zimbraPrefFromAddress|string:???;
+                        zimbraPrefReplyToAddress user/zimbraPrefReplyToAddress|string:???;
+                        ">
+        Login: <span tal:replace="uid">login</span><br>
+        Nombre: <span tal:replace="cn">Nombre Apellido</span><br>
+        Cedula: <span tal:replace="uniqueIdentifier">ci</span><br>
+        Password: <span tal:replace="userPassword">pwd</span><br>
+        Tipo: <span tal:replace="accountClassification">prof,ing,elect</span><br>
+        Estado de correo: <span tal:replace="zimbraMailStatus">ok</span><br>
+        Estado de cuenta zimbra: <span tal:replace="zimbraAccountStatus">ok</span><br>
+        Display Name: <span tal:replace="displayName">ok</span><br>
+        From Address: <span tal:replace="zimbraPrefFromAddress">ok</span><br>
+        Reply To Address: <span tal:replace="zimbraPrefReplyToAddress">ok</span><br>
+      </tal:user>
+
+    </metal:content-core>
+  </metal:content-core>
+</body>
+</html>
+

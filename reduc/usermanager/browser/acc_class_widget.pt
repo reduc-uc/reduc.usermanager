@@ -1,0 +1,135 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      tal:omit-tag="">
+    <select id="" name="" class="" style="" title=""
+            tal:attributes="id string:${view/id}-tipo;
+                            name string:${view/name}-tipo;
+                            style string:${view/style};
+            ">
+      <option value="estudiante">Estudiante</option>
+      <option value="profesor">Profesor</option>
+      <option value="empleado">Empleado</option>
+      <option value="obrero">Obrero</option>
+      <option value="dependencia">Dependencia</option>
+    </select>
+    <select id="" name="" class="" style="" title=""
+            tal:attributes="id string:${view/id}-ubicacion;
+                            name string:${view/name}-ubicacion;
+                            style string:${view/style};
+            ">
+      <option value="derecho,derecho">Derecho, Derecho</option>
+      <option value="derecho,facultad">Derecho, Facultad</option>
+      <option value="derecho,clasificame">Derecho, Otros</option>
+      <option value="direccionSuperior,cei">Direccion Superior, CEI</option>
+      <option value="direccionSuperior,comisionaduriaNA">Direccion Superior, Comisionaduria NA</option>
+      <option value="direccionSuperior,dde">Direccion Superior, DDE</option>
+      <option value="direccionSuperior,dta">Direccion Superior, DTA</option>
+      <option value="direccionSuperior,direccionDeCultura">Direccion Superior, Direccion de Cultura</option>
+      <option value="direccionSuperior,plantaFisica">Direccion Superior, Planta Fisica</option>
+      <option value="direccionSuperior,rectorado">Direccion Superior, Rectorado</option>
+      <option value="direccionSuperior,reduc">Direccion Superior, RedUC</option>
+      <option value="direccionSuperior,secretaria">Direccion Superior, Secretaria</option>
+      <option value="direccionSuperior,umce">Direccion Superior, UMCE</option>
+      <option value="direccionSuperior,vicerectoradoAcademico">Direccion Superior, Vicerectorado Academico</option>
+      <option value="direccionSuperior,vicerectoradoAdministrativo">Direccion Superior, Vicerectorado Administrativo</option>
+      <option value="direccionSuperior,clasificame">Direccion Superior, Otros</option>
+      <option value="educacion,educacion">Educacion, Educacion</option>
+      <option value="educacion,facultad">Educacion, Facultad</option>
+      <option value="educacion,clasificame">Educacion, Otros</option>
+      <option value="externo,cmgm">Externo, CMGM</option>
+      <option value="externo,hcm">Externo, HCM</option>
+      <option value="externo,clasificame">Externo, Otros</option>
+      <option value="faces,administracion">FACES, Administracion</option>
+      <option value="faces,cicloBasico">FACES, Ciclo Basico</option>
+      <option value="faces,contaduria">FACES, Contaduria</option>
+      <option value="faces,economia">FACES, Economia</option>
+      <option value="faces,facultad">FACES, Facultad</option>
+      <option value="faces,infaces">FACES, Infaces</option>
+      <option value="faces,relacionesIndustriales">FACES, Relaciones Industriales</option>
+      <option value="faces,clasificame">FACES, Otros</option>
+      <option value="facesNA,administracion">FACES NA, Adminsitracion</option>
+      <option value="facesNA,cicloBasico">FACES NA, Ciclo Basico</option>
+      <option value="facesNA,contaduria">FACES NA, Contaduria</option>
+      <option value="facesNA,relacionesIndustriales">FACES NA, Relaciones Industriales</option>
+      <option value="facyt,biologia">FACYT, Biologia</option>
+      <option value="facyt,computacion">FACYT, Computacion</option>
+      <option value="facyt,facultad">FACYT, Facultad</option>
+      <option value="facyt,fisica">FACYT, Fisica</option>
+      <option value="facyt,matematica">FACYT, Matematica</option>
+      <option value="facyt,quimica">FACYT, Quimica</option>
+      <option value="facyt,clasificame">FACYT, Otros</option>
+      <option value="fcs,bioanalisis">FCS, Bioanalisis</option>
+      <option value="fcs,biomedicas">FCS, Biomedicas</option>
+      <option value="fcs,enfermeria">FCS, Enfermeria</option>
+      <option value="fcs,facultad">FCS, Facultad</option>
+      <option value="fcs,medicina">FCS, Medicina</option>
+      <option value="fcs,saludPublica">FCS, Salud Publica</option>
+      <option value="fcs,clasificame">FCS, Otros</option>
+      <option value="fcsNA,bioanalisis">FCS NA, Bioanalisis</option>
+      <option value="fcsNA,biomedicas">FCS NA, Biomedicas</option>
+      <option value="fcsNA,facultad">FCS NA, Facultad</option>
+      <option value="fcsNA,medicina">FCS NA, Medicina</option>
+      <option value="fcsNA,saludPublica">FCS NA, Salud Publica</option>
+      <option value="fundacion,apucito">Fundacion, Apucito</option>
+      <option value="fundacion,egreamigos">Fundacion, Egreamigos</option>
+      <option value="fundacion,fundacid">Fundacion, Fundacid</option>
+      <option value="fundacion,fundacine">Fundacion, Fundacine</option>
+      <option value="fundacion, fundauc">Fundacion, FundaUC</option>
+      <option value="fundacion,clasificame">Fundacion, Otros</option>
+      <option value="ingenieria,civil">Ingenieria, Civil</option>
+      <option value="ingenieria,electrica">Ingenieria, Electrica</option>
+      <option value="ingenieria,estudiosBasicos">Ingenieria, Estudios Basicos</option>
+      <option value="ingenieria,facultad">Ingenieria, Facultad</option>
+      <option value="ingenieria,imyca">Ingenieria, IMYCA</option>
+      <option value="ingenieria,industrial">Ingenieria, Industrial</option>
+      <option value="ingenieria,mecanica">Ingenieria, Mecanica</option>
+      <option value="ingenieria,postgrado">Ingenieria, Postgrado</option>
+      <option value="ingenieria,quimica">Ingenieria, Quimica</option>
+      <option value="ingenieria,clasificame">Ingenieria, Otros</option>
+      <option value="odontologia,facultad">Odontologia, Facultad</option>
+      <option value="odontologia,odontologia">Odontologia, Odontologia</option>
+      <option value="odontologia,postgrado">Odontologia, Postgrado</option>
+      <option value="odontologia,clasificame">Odontologia, Otros</option>
+      <option value="postgrado,derecho">Postgrado, Derecho</option>
+      <option value="postgrado,educacion">Postgrado, Educacion</option>
+      <option value="postgrado,faces">Postgrado, FACES</option>
+      <option value="postgrado,facyt">Postgrado, FACYT</option>
+      <option value="postgrado,fcs">Postgrado, FCS</option>
+      <option value="postgrado,facultad">Postgrado, Facultad</option>
+      <option value="postgrado,ingenieria">Postgrado, Ingenieria</option>
+      <option value="postgrado,odontologia">Postgrado, Odontologia</option>
+      <option value="postgrado,clasificame">Postgrado, Otros</option>
+    </select>
+    <input id="" name="" class="" title="" lang="" disabled=""
+           readonly="" alt="" tabindex="" accesskey="" size="" maxlength=""
+           style="" value="" type="text"
+           hidden="true"
+           tal:attributes="id view/id;
+                           name view/name;
+                           class view/klass;
+                           style view/style;
+                           title view/title;
+                           lang view/lang;
+                           onclick view/onclick;
+                           ondblclick view/ondblclick;
+                           onmousedown view/onmousedown;
+                           onmouseup view/onmouseup;
+                           onmouseover view/onmouseover;
+                           onmousemove view/onmousemove;
+                           onmouseout view/onmouseout;
+                           onkeypress view/onkeypress;
+                           onkeydown view/onkeydown;
+                           onkeyup view/onkeyup;
+                           value view/value;
+                           disabled view/disabled;
+                           tabindex view/tabindex;
+                           onfocus view/onfocus;
+                           onblur view/onblur;
+                           onchange view/onchange;
+                           readonly view/readonly;
+                           alt view/alt;
+                           accesskey view/accesskey;
+                           onselect view/onselect;
+                           size view/size;
+                           maxlength view/maxlength" />
+</html>

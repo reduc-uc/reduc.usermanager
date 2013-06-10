@@ -1,0 +1,25 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="vnccollab.theme">
+
+  <!-- Zope 3 browser resources -->
+
+  <!-- Resource directory for images -->
+  <browser:resourceDirectory
+      name="reduc.usermanager.images"
+      directory="images"
+      />
+      
+  <browser:resourceDirectory
+      name="reduc.usermanager.js"
+      directory="js"
+      />
+
+  <!-- Resource directory for stylesheets -->
+  <browser:resourceDirectory
+      name="reduc.usermanager.stylesheets"
+      directory="stylesheets"
+      />
+
+</configure>

@@ -1,0 +1,26 @@
+<registry>
+    <record name="reduc.usermanager.uri">
+        <field type="plone.registry.field.URI">
+            <title>LDAP URI</title>
+        </field>
+        <value>ldap://c.correo.uc.edu.ve</value>
+    </record>
+    <record name="reduc.usermanager.base_dn">
+        <field type="plone.registry.field.Text">
+            <title>LDAP DN</title>
+        </field>
+        <value>dc=uc,dc=edu,dc=ve</value>
+    </record>
+    <record name="reduc.usermanager.root_dn">
+        <field type="plone.registry.field.Text">
+            <title>DN del Usuario Root</title>
+        </field>
+        <value>cn=config</value>
+    </record>
+    <record name="reduc.usermanager.root_pwd">
+        <field type="plone.registry.field.Password">
+            <title>Password del Usuario Root</title>
+        </field>
+        <value></value>
+    </record>
+</registry>

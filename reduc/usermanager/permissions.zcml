@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    i18n_domain="example.conference">
+
+  <!-- Permissions -->
+  <permission
+    id="usermanager.view"
+    title="UserManager: View"
+    />
+
+  <permission
+    id="usermanager.password"
+    title="UserManager: Password"
+    />
+
+  <permission
+    id="usermanager.new"
+    title="UserManager: New"
+    />
+
+  <permission
+    id="usermanager.modify"
+    title="UserManager: Modify"
+    />
+
+  <permission
+    id="usermanager.suspend"
+    title="UserManager: Suspend"
+    />
+
+  <permission
+    id="usermanager.reactivate"
+    title="UserManager: Reactivate"
+    />
+
+</configure>
