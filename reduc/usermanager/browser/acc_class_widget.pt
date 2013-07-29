@@ -80,6 +80,7 @@
       <option value="ingenieria,electrica">Ingenieria, Electrica</option>
       <option value="ingenieria,estudiosBasicos">Ingenieria, Estudios Basicos</option>
       <option value="ingenieria,facultad">Ingenieria, Facultad</option>
+      <option value="ingenieria,fisica">Ingenieria, Fisica</option>
       <option value="ingenieria,imyca">Ingenieria, IMYCA</option>
       <option value="ingenieria,industrial">Ingenieria, Industrial</option>
       <option value="ingenieria,mecanica">Ingenieria, Mecanica</option>
