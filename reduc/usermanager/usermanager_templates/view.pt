@@ -22,6 +22,8 @@
                         cn   user/cn|string:???;
                         userPassword  user/userPassword|string:???;
                         accountClassification  user/accClass|string:???;
+                        dateCreation user/dateCreation|string:???;
+                        dateExpiration user/dateExpiration|string:???;
                         zimbraAccountStatus   user/zimbraAccountStatus|string:???;
                         zimbraMailStatus  user/zimbraAccountStatus|string:???;
                         displayName  user/displayName|string:'';
@@ -33,6 +35,8 @@
         Cedula: <span tal:replace="uniqueIdentifier">ci</span><br>
         Password: <span tal:replace="userPassword">pwd</span><br>
         Tipo: <span tal:replace="accountClassification">prof,ing,elect</span><br>
+        Fecha Creación: <span tal:replace="dateCreation">20011231</span><br>
+        Fecha Expiración: <span tal:replace="dateExpiration">20011231</span><br>
         Estado de correo: <span tal:replace="zimbraMailStatus">ok</span><br>
         Estado de cuenta zimbra: <span tal:replace="zimbraAccountStatus">ok</span><br>
         Display Name: <span tal:replace="displayName">ok</span><br>
