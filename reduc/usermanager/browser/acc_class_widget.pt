@@ -24,7 +24,7 @@
       <option value="direccionSuperior,comisionaduriaNA">Direccion Superior, Comisionaduria NA</option>
       <option value="direccionSuperior,dde">Direccion Superior, DDE</option>
       <option value="direccionSuperior,dta">Direccion Superior, DTA</option>
-      <option value="direccionSuperior,dta">Direccion Superior, DIGAES</option>
+      <option value="direccionSuperior,digaes">Direccion Superior, DIGAES</option>
       <option value="direccionSuperior,direccionDeCultura">Direccion Superior, Direccion de Cultura</option>
       <option value="direccionSuperior,plantaFisica">Direccion Superior, Planta Fisica</option>
       <option value="direccionSuperior,rectorado">Direccion Superior, Rectorado</option>
