@@ -29,6 +29,7 @@
                         displayName  user/displayName|string:'';
                         zimbraPrefFromAddress user/zimbraPrefFromAddress|string:???;
                         zimbraPrefReplyToAddress user/zimbraPrefReplyToAddress|string:???;
+                        zimbraMailHost user/zimbraMailHost|string:???;
                         ">
         Login: <span tal:replace="uid">login</span><br>
         Nombre: <span tal:replace="cn">Nombre Apellido</span><br>
@@ -37,6 +38,7 @@
         Tipo: <span tal:replace="accountClassification">prof,ing,elect</span><br>
         Fecha Creación: <span tal:replace="dateCreation">20011231</span><br>
         Fecha Expiración: <span tal:replace="dateExpiration">20011231</span><br>
+        Servidor de correo: <span tal:replace="zimbraMailHost">c.correo.uc.edu.ve</span><br>
         Estado de correo: <span tal:replace="zimbraMailStatus">ok</span><br>
         Estado de cuenta zimbra: <span tal:replace="zimbraAccountStatus">ok</span><br>
         Display Name: <span tal:replace="displayName">ok</span><br>
