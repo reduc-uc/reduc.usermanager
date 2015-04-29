@@ -63,6 +63,7 @@
       <option value="fcs,biomedicas">FCS, Biomedicas</option>
       <option value="fcs,enfermeria">FCS, Enfermeria</option>
       <option value="fcs,facultad">FCS, Facultad</option>
+      <option value="fcs,hospitalPrinceLara">FCS, Hospital Prince Lara</option>
       <option value="fcs,medicina">FCS, Medicina</option>
       <option value="fcs,saludPublica">FCS, Salud Publica</option>
       <option value="fcs,clasificame">FCS, Otros</option>
