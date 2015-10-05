@@ -22,6 +22,7 @@
       <option value="derecho,clasificame">Derecho, Otros</option>
       <option value="direccionSuperior,cei">Direccion Superior, CEI</option>
       <option value="direccionSuperior,comisionaduriaNA">Direccion Superior, Comisionaduria NA</option>
+      <option value="direccionSuperior,comisionaduriaCojedes">Direccion Superior, Comisionaduria Cojedes</option>
       <option value="direccionSuperior,dde">Direccion Superior, DDE</option>
       <option value="direccionSuperior,dta">Direccion Superior, DTA</option>
       <option value="direccionSuperior,digaes">Direccion Superior, DIGAES</option>
