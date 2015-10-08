@@ -34,8 +34,6 @@ setup(name='reduc.usermanager',
           'plone.app.registry',
           'reduc.ldap',
           'reduc.user',
-          #'collective.z3cform.datepicker',
-          'jyu.z3cform.datepicker',
       ],
       extras_require = {
           'test' : ['plone.testing',],
