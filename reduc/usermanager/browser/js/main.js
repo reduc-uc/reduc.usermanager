@@ -7,16 +7,16 @@ function usermanager_module() {
   var month = today.getMonth();
   var year = today.getFullYear();
 
-  var $uid = jq('#form-widgets-uid');
-  var $dateCreationDay = jq('#form-widgets-dateCreation-day');
-  var $dateExpirationDay = jq('#form-widgets-dateExpiration-day');
-  var $dateCreationMonth = jq('#form-widgets-dateCreation-month');
-  var $dateExpirationMonth = jq('#form-widgets-dateExpiration-month');
-  var $dateCreationYear = jq('#form-widgets-dateCreation-year');
-  var $dateExpirationYear = jq('#form-widgets-dateExpiration-year');
-  var $accClass = jq('#form-widgets-accClass');
-  var $accClassTipo = jq('#form-widgets-accClass-tipo');
-  var $accClassUbicacion = jq('#form-widgets-accClass-ubicacion');
+  var $uid = $('#form-widgets-uid');
+  var $dateCreationDay = $('#form-widgets-dateCreation-day');
+  var $dateExpirationDay = $('#form-widgets-dateExpiration-day');
+  var $dateCreationMonth = $('#form-widgets-dateCreation-month');
+  var $dateExpirationMonth = $('#form-widgets-dateExpiration-month');
+  var $dateCreationYear = $('#form-widgets-dateCreation-year');
+  var $dateExpirationYear = $('#form-widgets-dateExpiration-year');
+  var $accClass = $('#form-widgets-accClass');
+  var $accClassTipo = $('#form-widgets-accClass-tipo');
+  var $accClassUbicacion = $('#form-widgets-accClass-ubicacion');
 
   function update_expiration_year() {
     // Fija el año de expiracion a la fecha de hoy + 5 o 30 años
@@ -94,12 +94,12 @@ function usermanager_module() {
   }
 }
 
-jq(function() {
+$(function() {
   usermanager = usermanager_module();
-  if (jq('#usermanager-add-form').length === 1) {
+  if ($('#usermanager-add-form').length === 1) {
       usermanager.init_new_page();
   }
-  if (jq('#usermanager-edit-form').length ===1) {
+  if ($('#usermanager-edit-form').length ===1) {
       usermanager.init_edit_page();
   }
 });
