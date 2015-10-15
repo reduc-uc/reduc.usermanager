@@ -20,8 +20,10 @@ from Products.statusmessages.interfaces import IStatusMessage
 from zope.browserpage.viewpagetemplatefile import ViewPageTemplateFile
 
 from zope.component import getMultiAdapter, getUtility
+from zope.interface import alsoProvides
 from zope.interface import invariant, Invalid, implements
 from plone.directives import form, dexterity
+from plone.protect.interfaces import IDisableCSRFProtection
 
 from reduc.user.command import PasswordException
 from reduc.usermanager import MyMessageFactory as _
@@ -29,11 +31,14 @@ from reduc.usermanager.umutil import IUserManagerUtil
 from reduc.usermanager.support import SessionUsers, AdminUtil
 from reduc.usermanager.vocabularies import suspend_vocabulary
 
+
+
 class IUserManager(form.Schema):
     '''Administrador de Usuarios'''
     
 class UcBaseView:
     def uc_update(self):
+	alsoProvides(self.request, IDisableCSRFProtection)
         self.users = SessionUsers(self.context)
         self.current_user = self.users.current()
         self.admin = AdminUtil(self.context)
