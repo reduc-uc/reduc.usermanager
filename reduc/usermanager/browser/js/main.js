@@ -1,6 +1,9 @@
 // Main js file for reduc.usermanager
 //
-function usermanager_module() {
+require([
+  'jquery',
+  'pat-registry'
+], function($, Registry) {
   // Inicializa los campos en el formulario new
   var today = new Date();
   var day = today.getDate();
@@ -92,14 +95,14 @@ function usermanager_module() {
       init_new_page: init_new_page,
       init_edit_page: init_edit_page
   }
-}
 
-$(function() {
-  usermanager = usermanager_module();
-  if ($('#usermanager-add-form').length === 1) {
-      usermanager.init_new_page();
-  }
-  if ($('#usermanager-edit-form').length ===1) {
-      usermanager.init_edit_page();
-  }
+  $(function() {
+    usermanager = usermanager_module();
+    if ($('#usermanager-add-form').length === 1) {
+        usermanager.init_new_page();
+    }
+    if ($('#usermanager-edit-form').length ===1) {
+        usermanager.init_edit_page();
+    }
+  });
 });

@@ -1,4 +1,5 @@
 <registry>
+  <!-- Usermanager configuration -->
     <record name="reduc.usermanager.uri">
         <field type="plone.registry.field.URI">
             <title>LDAP URI</title>
@@ -23,4 +24,20 @@
         </field>
         <value></value>
     </record>
+
+  <!-- javascript registry -->
+  <records prefix="plone.resources/reduc-usermanager-forms"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++resource++reduc.usermanager.js/main.js</value>
+    <value key="deps">jquery</value>
+  </records>
+
+  <!-- bundle -->
+  <records prefix="plone.bundles/reduc.usermanager"
+           interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+    <value key="resources">
+      <element>reduc-usermanager-forms</element>
+    </value>
+  </records>
 </registry>
+
