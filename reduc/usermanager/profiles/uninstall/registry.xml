@@ -1,0 +1,40 @@
+<registry>
+  <!-- Usermanager configuration -->
+  <record name="reduc.usermanager.uri" remove="True" />
+  <record name="reduc.usermanager.base_dn" remove="True" />
+  <record name="reduc.usermanager.root_dn" remove="True" />
+  <record name="reduc.usermanager.root_pwd" remove="True" />
+
+  <!-- resources registry -->
+  <records prefix="plone.resources/reduc.usermanager.main"
+           interface="Products.CMFPlone.interfaces.IResourceRegistry"
+           remove="True" />
+  <records prefix="plone.resources/reduc.usermanager.forms"
+           interface="Products.CMFPlone.interfaces.IResourceRegistry"
+           remove="True" />
+
+  <!-- bundle -->
+  <records prefix="plone.bundles/reduc.usermanager"
+           interface="Products.CMFPlone.interfaces.IBundleRegistry"
+           remove="True" />
+
+
+  <!-- resources support records -->
+  <record name="plone.resources/reduc.usermanager.forms.conf" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.css" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.deps" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.export" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.js" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.url" remove="True" />
+  <record name="plone.resources/reduc.usermanager.forms.init" remove="True" />
+
+  <record name="plone.resources/reduc.usermanager.main.conf" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.css" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.deps" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.export" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.js" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.url" remove="True" />
+  <record name="plone.resources/reduc.usermanager.main.init" remove="True" />
+
+</registry>
+
