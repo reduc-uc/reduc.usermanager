@@ -37,6 +37,9 @@ class IUserManager(form.Schema):
     '''Administrador de Usuarios'''
     
 class UcBaseView:
+    def __init__(self, context, request):
+	alsoProvides(self.request, IDisableCSRFProtection)
+
     def uc_update(self):
 	alsoProvides(self.request, IDisableCSRFProtection)
         self.users = SessionUsers(self.context)
@@ -290,6 +293,10 @@ class New(form.SchemaAddForm, UcBaseView):
     label = 'Crear un nuevo Usuario'
     name = 'usermanager-add-form'
 
+    def __init__(self, context, request):
+        form.SchemaAddForm.__init__(self, context, request)
+        UcBaseView.__init__(self, context, request)
+
     def updateWidgets(self):
         form.SchemaAddForm.updateWidgets(self)
         widget = self.widgets['accClass']
@@ -367,12 +374,13 @@ class Edit(form.SchemaEditForm, UcBaseView):
         if errors:
             self.status = self.formErrorsMessage
             return
-        
+
         entry = self.entry_from_user(data)
 
         try:
             new = self.util.modify(self.current_user, entry)
             self.users.set_current(new)
+
             form.SchemaEditForm.applyChanges(self, entry)
             self.set_status(u'Usuario modificado satisfactoriamente')
             self.response.redirect(self.context.absolute_url())
