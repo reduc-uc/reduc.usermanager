@@ -1,44 +1,38 @@
-<dl class="portlet mi-portlet">
- <dt class="portletHeader">
-   <span class="portletTopLeft"></span>
-   Acciones
-   <span class="portletTopRight"></span>
- </dt>
-
- <dd class="portletItem">
-   <ul class="navTree navTreeLevel0">
-     <li class="navTree">
+<section class="portlet uc-manager-action-portlet">
+  <header class="portletHeader">
+    Acciones
+  </header>
+  <section class="portletContent">
+    <ul>
+      <li class="portletItem">
         <form tal:attributes="action string:${context/absolute_url}/search"
               action="">
-          <input type="text" name="uid_or_ci">
-          <input type="submit" value="Buscar">
+          <div class="">
+            <input type="text" name="uid_or_ci" class="">
+            <input type="submit" value="Buscar" class="">
+          </div>
         </form>
-     </li>
-     <li class="navTree" 
+      </li>
+      <li class="portletItem odd"
           tal:condition="view/can_add"><a 
           tal:attributes="href string:${context/absolute_url}/new"
           href ="">Nuevo Usuario</a></li>
-     <li class="navTree"
+      <li class="portletItem even"
           tal:condition="view/can_change_password"><a 
           tal:attributes="href string:${context/absolute_url}/password"
           href="">Cambiar Contraseña</a></li>
-     <li class="navTree"
+      <li class="portletItem odd"
           tal:condition="view/can_modify"><a 
           tal:attributes="href string:${context/absolute_url}/modify"
           href="">Modificar Usuario</a></li>
-     <li class="navTree"
+      <li class="portletItem even"
           tal:condition="view/can_suspend"><a 
           tal:attributes="href string:${context/absolute_url}/suspend"
           href="">Suspender</a></li>
-     <li class="navTree"
+      <li class="portletItem odd"
           tal:condition="view/can_reactivate"><a 
           tal:attributes="href string:${context/absolute_url}/reactivate"
           href="">Reactivar</a></li>
-  </ul>
- </dd>
-
- <dd class="portletFooter">
-   <span class="portletBottomLeft"></span>
-   <span class="portletBottomRight"></span>
- </dd>
-</dl>
+    </ul>
+  </section>
+</section>
