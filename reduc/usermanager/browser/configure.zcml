@@ -18,7 +18,7 @@
 
   <!-- Resource directory for stylesheets -->
   <browser:resourceDirectory
-      name="reduc.usermanager.stylesheets"
+      name="reduc.usermanager.css"
       directory="stylesheets"
       />
 
