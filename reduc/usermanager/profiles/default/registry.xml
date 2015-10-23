@@ -1,42 +1,46 @@
 <registry>
   <!-- Usermanager configuration -->
-    <record name="reduc.usermanager.uri">
-        <field type="plone.registry.field.URI">
-            <title>LDAP URI</title>
-        </field>
-        <value>ldap://c.correo.uc.edu.ve</value>
-    </record>
-    <record name="reduc.usermanager.base_dn">
-        <field type="plone.registry.field.Text">
-            <title>LDAP DN</title>
-        </field>
-        <value>dc=uc,dc=edu,dc=ve</value>
-    </record>
-    <record name="reduc.usermanager.root_dn">
-        <field type="plone.registry.field.Text">
-            <title>DN del Usuario Root</title>
-        </field>
-        <value>cn=config</value>
-    </record>
-    <record name="reduc.usermanager.root_pwd">
-        <field type="plone.registry.field.Password">
-            <title>Password del Usuario Root</title>
-        </field>
-        <value></value>
-    </record>
+  <record name="reduc.usermanager.uri">
+    <field type="plone.registry.field.URI">
+      <title>LDAP URI</title>
+      </field>
+    <value>ldap://c.correo.uc.edu.ve</value>
+  </record>
+  <record name="reduc.usermanager.base_dn">
+    <field type="plone.registry.field.Text">
+      <title>LDAP DN</title>
+    </field>
+    <value>dc=uc,dc=edu,dc=ve</value>
+  </record>
+  <record name="reduc.usermanager.root_dn">
+    <field type="plone.registry.field.Text">
+      <title>DN del Usuario Root</title>
+    </field>
+    <value>cn=config</value>
+  </record>
+  <record name="reduc.usermanager.root_pwd">
+    <field type="plone.registry.field.Password">
+      <title>Password del Usuario Root</title>
+    </field>
+    <value></value>
+  </record>
 
-  <!-- javascript registry -->
-  <records prefix="plone.resources/reduc-usermanager-forms"
+  <!-- resource registry -->
+  <records prefix="plone.resources/reduc.usermanager.main"
            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
     <value key="js">++resource++reduc.usermanager.js/main.js</value>
-    <value key="deps">jquery</value>
+  </records>
+  <records prefix="plone.resources/reduc.usermanager.forms"
+           interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+    <value key="js">++resource++reduc.usermanager.js/forms.js</value>
   </records>
 
-  <!-- bundle -->
+  <!-- bundle registry -->
   <records prefix="plone.bundles/reduc.usermanager"
            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
     <value key="resources">
-      <element>reduc-usermanager-forms</element>
+      <element>reduc.usermanager.main</element>
+      <element>reduc.usermanager.forms</element>
     </value>
   </records>
 </registry>
