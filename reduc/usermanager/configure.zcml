@@ -15,9 +15,16 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="reduc.usermanager"
+      title="RedUC UserManager"
       directory="profiles/default"
       description="Installs the reduc.usermanager package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="Uninstall RedUC UserManager"
+      directory="profiles/uninstall"
+      description="uninstalls the reduc.usermanager package"
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
