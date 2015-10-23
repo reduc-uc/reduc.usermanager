@@ -9,7 +9,7 @@
 # it under the terms of the GNU General Public License.
 #
 ##############################################################################
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from five import grok
 from zope import schema
@@ -95,15 +95,15 @@ class UcBaseView:
         dct[k] = [dct[k], dct[k2]]
         del(dct[k2])
 
-    def _date_or_empty_from_entry(self, entry, key):
-        date_string = entry.first(key, '')
+    def _date_or_today_from_entry(self, entry, key):
+        date_string = entry.first(key, [''])
         if not date_string:
-            return ''
+            return self._string_from_date()
         return self._date_from_string(date_string)
 
     def user_from_entry(self, entry):
-        entry['dateCreation'] = self._date_or_empty_from_entry(entry, 'dateCreation')
-        entry['dateExpiration'] = self._date_or_empty_from_entry(entry, 'dateExpiration')
+        entry['dateCreation'] = self._date_or_today_from_entry(entry, 'dateCreation')
+        entry['dateExpiration'] = self._date_or_today_from_entry(entry, 'dateExpiration')
         self._list_to_attributes(entry, 'givenName')
         self._list_to_attributes(entry, 'sn')
         return entry
@@ -123,7 +123,9 @@ class UcBaseView:
     def _date_from_string(self, strdate):
         return datetime.strptime(strdate, '%Y%m%d')
 
-    def _string_from_date(self, date):
+    def _string_from_date(self, date=None):
+        if not date:
+           date = datetime.today()
         return date.strftime('%Y%m%d')
 
 
@@ -268,6 +270,17 @@ class IUser(form.Schema):
     dateExpiration = schema.Date(
             title = _(u'Fecha de Expiracion'),
             )
+
+
+@form.default_value(field=IUser['dateCreation'])
+def default_title(data):
+    return datetime.today()
+
+
+@form.default_value(field=IUser['dateExpiration'])
+def default_title(data):
+    return datetime.today() + timedelta(days=365 * 6)
+
 
 class User:
     implements(IUser)
