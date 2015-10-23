@@ -75,7 +75,7 @@ class UcBaseView:
             if 'date' in k :
                 entry[k] = self._string_from_date(v)
                 continue
-            entry[k] = entry[k].encode('ascii') if entry[k] else ''
+            #entry[k] = entry[k].encode('ascii') if entry[k] else ''
 
         # Consolidamos givenName2 y surname2 en givenname y surname
         self._attributes_to_list(entry, 'givenName')
@@ -231,20 +231,20 @@ class IUser(form.Schema):
     '''Representa a un usuario para las vista de creacion, edicion y
     despliegue'''
 
-    givenName  = schema.TextLine(
+    givenName  = schema.ASCIILine(
             title = _(u'Primer Nombre'),
             )
 
-    givenName2  = schema.TextLine(
+    givenName2  = schema.ASCIILine(
             title = _(u'Segundo Nombre'),
             required = False,
             )
 
-    sn  = schema.TextLine(
+    sn  = schema.ASCIILine(
             title = _(u'Primer Apellido'),
             )
 
-    sn2  = schema.TextLine(
+    sn2  = schema.ASCIILine(
             title = _(u'Segundo Apellido'),
             required = False,
             )
@@ -253,12 +253,12 @@ class IUser(form.Schema):
             title = _(u'Clasificacion del Usuario'),
             )
 
-    uid = schema.TextLine(
+    uid = schema.ASCIILine(
             title = _(u'Login'),
             required = False
             )
 
-    uniqueIdentifier  = schema.TextLine(
+    uniqueIdentifier  = schema.ASCIILine(
             title = _(u'Cedula de Identidad'),
             description = _(u'Ej. V11222333'),
             )
