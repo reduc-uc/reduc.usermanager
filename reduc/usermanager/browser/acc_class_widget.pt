@@ -28,6 +28,7 @@
       <option value="direccionSuperior,digaes">Direccion Superior, DIGAES</option>
       <option value="direccionSuperior,dta">Direccion Superior, DTA</option>
       <option value="direccionSuperior,direccionDeCultura">Direccion Superior, Direccion de Cultura</option>
+      <option value="direccionSuperior,pipsuc">Direccion Superior, Pipsuc</option>
       <option value="direccionSuperior,plantaFisica">Direccion Superior, Planta Fisica</option>
       <option value="direccionSuperior,rectorado">Direccion Superior, Rectorado</option>
       <option value="direccionSuperior,reduc">Direccion Superior, RedUC</option>
