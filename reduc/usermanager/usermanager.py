@@ -458,7 +458,7 @@ class Reactivate(form.SchemaForm, UcBaseView):
         new = self.current_user.clone()
         new['userPassword'] = '{SSHA5}setme'
         new['zimbraMailStatus'] = 'enabled'
-        new['zimbraAccountStatus'] 'active'
+        new['zimbraAccountStatus'] = 'active'
 
         try:
             new = self.util.modify(self.current_user, new)
