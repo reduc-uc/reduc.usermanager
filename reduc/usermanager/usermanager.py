@@ -32,6 +32,7 @@ from reduc.usermanager.vocabularies import suspend_vocabulary
 class IUserManager(form.Schema):
     '''Administrador de Usuarios'''
 
+
 class UcBaseView:
     def uc_update(self):
         self.users = SessionUsers(self.context)
@@ -474,4 +475,3 @@ class Reactivate(form.SchemaForm, UcBaseView):
         self.uc_update()
         self.set_status('Accion cancelada.', u'info')
         self.request.response.redirect(self.context.absolute_url_path())
-
