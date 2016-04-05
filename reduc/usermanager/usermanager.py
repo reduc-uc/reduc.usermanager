@@ -114,7 +114,10 @@ class UcBaseView:
             dct[k] = dct[k][0]
 
     def _date_from_string(self, strdate):
-        return datetime.strptime(strdate, '%Y%m%d')
+        try:
+            return datetime.strptime(strdate, '%Y%m%d')
+        except ValueError, e:
+            raise ValueError('Error in dateformat "{0}"'.format(strdate))
 
     def _string_from_date(self, date):
         return date.strftime('%Y%m%d')
