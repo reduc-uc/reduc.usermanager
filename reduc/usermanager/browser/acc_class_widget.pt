@@ -106,8 +106,7 @@
     </select>
     <input id="" name="" class="" title="" lang="" disabled=""
            readonly="" alt="" tabindex="" accesskey="" size="" maxlength=""
-           style="" value="" type="text"
-           hidden="true"
+           style="" value="" type="hidden"
            tal:attributes="id view/id;
                            name view/name;
                            class view/klass;
