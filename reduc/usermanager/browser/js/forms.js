@@ -78,7 +78,7 @@ define([
       var accClass = $accClass.val();
       var split = accClass.split(',');
       var accClassTipo = split.shift().toLowerCase();
-      var accClassUbicacion = split.join(',').toLowerCase();
+      var accClassUbicacion = split.join(',');
       $accClassTipo.val(accClassTipo);
       $accClassUbicacion.val(accClassUbicacion);
   }
