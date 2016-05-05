@@ -35,7 +35,7 @@ from reduc.usermanager.vocabularies import suspend_vocabulary
 
 class IUserManager(form.Schema):
     '''Administrador de Usuarios'''
-    
+
 class UcBaseView:
     def __init__(self, context, request):
 	alsoProvides(self.request, IDisableCSRFProtection)
@@ -80,8 +80,14 @@ class UcBaseView:
         # Consolidamos givenName2 y surname2 en givenname y surname
         self._attributes_to_list(entry, 'givenName')
         self._attributes_to_list(entry, 'sn')
+
         if 'uid' in entry:
-            entry['uid'] = entry['uid'].lower()
+            if entry['uid'] is None:
+                entry['uid'] = ''
+
+            else:
+                entry['uid'] = entry['uid'].lower()
+
         return entry
 
     def _attributes_to_list(self, dct, k):
@@ -249,7 +255,7 @@ class IUser(form.Schema):
             required = False,
             )
 
-    accClass = schema.TextLine(
+    accClass = schema.ASCIILine(
             title = _(u'Clasificacion del Usuario'),
             )
 
@@ -295,6 +301,10 @@ class User:
         self.dateExpiration = kargs.get('dateExpiration', '')
 
 
+ESTUDIANTE_EXPIRACION = 7
+OTROS_EXPIRACION = 25
+
+
 class New(form.SchemaAddForm, UcBaseView):
     '''Nuevo Usuario'''
     grok.context(IUserManager)
@@ -315,7 +325,11 @@ class New(form.SchemaAddForm, UcBaseView):
         widget = self.widgets['accClass']
         widget.template = ViewPageTemplateFile("browser/acc_class_widget.pt")
 
+        # Borramos dateExpiration
+        del(self.widgets['dateExpiration'])
+
     def create(self, data):
+        self._add_dateExpiration(data)
         entry = self.entry_from_user(data)
         return entry
 
@@ -327,6 +341,17 @@ class New(form.SchemaAddForm, UcBaseView):
         self.users = SessionUsers(self.context)
         self.users.set_users(users)
 
+    def _add_dateExpiration(self, data):
+        # Agrega el campo dateExpiracion con un valor
+        # de acuerdo al tipo de usuario
+        if 'estudiante' in data['accClass']:
+            delta = timedelta(365 * ESTUDIANTE_EXPIRACION)
+
+        else:
+            delta = timedelta(365 * OTROS_EXPIRACION)
+
+        data['dateExpiration'] = data['dateCreation'] + delta
+
     @button.buttonAndHandler(_('Crear'), name='save')
     def handleAdd(self, action):
         self.uc_update()
@@ -335,8 +360,10 @@ class New(form.SchemaAddForm, UcBaseView):
         if errors:
             self.status = self.formErrorsMessage
             return
+
         try:
             obj = self.createAndAdd(data)
+
         except Exception as err:
             self.set_status(str(err), u'error')
             return
@@ -498,4 +525,4 @@ class Reactivate(form.SchemaForm, UcBaseView):
         self.uc_update()
         self.set_status('Accion cancelada.', u'info')
         self.request.response.redirect(self.context.absolute_url_path())
-    
+
